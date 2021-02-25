@@ -27,48 +27,44 @@ function createTodo(){
         todo.value = "";
     }
     
+    const moveBtns = document.querySelectorAll('.moveBtn');
+
+    //TODO edit make sure the click eventhandler first click does not double click.
+    //it does a double click
+    moveBtns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+            
+            moveProgress(btn);
+        });
+    })
     
-    moveBtn.addEventListener('click', moveProgress);
 }
 
-function moveProgress(){
+function moveProgress(btn){
+    console.log(btn.previousElementSibling);
     //gets the button that was created in the create todo method
-    let moveBtn = document.querySelector('.moveBtn');
-
-    //is the parent 
-    let todo = moveBtn.parentNode;
+    //is the parent div of btn
+    let todo = btn.parentNode;
+    //is the parent column of the todo
     let parent = todo.parentNode;
-    console.log(parent);
-    let todoDiv = document.querySelectorAll('.todo-div');
-    //let count = 0;
-    const first = document.querySelector('#first');
-    const second = document.querySelector('#second');
-    const third = document.querySelector('#third');
-    const placementDiv = document.querySelector('#placement-div');
+    if(todo.id === "last" ){
+        let closeBtn = document.createElement('button');
+        closeBtn.innerText = 'Close';
+        todo = closeBtn.parentNode;
+        todo.appendChild(closeBtn);
+    }
 
-    // if(parent === placementDiv){
-    //     first.appendChild(todo);
-    // }
-
-    // if(parent === first){
-    //     second.appendChild(todo);
-    // }
-
-    // if(parent === second){
-    //     third.appendChild(todo);
-    // }
-
+    const todoDiv = document.querySelectorAll('.todo-div');
+    
+    let found;
     
 
-
-    //console.log(todo, todo.parentNode);
-    let found = 0;
     todoDiv.forEach((div, index) => {
         if(parent === div){
             found = index + 1;
-        }
+        } 
+        
     })
     todoDiv[found].appendChild(todo);
-    // count++;
     
 }
