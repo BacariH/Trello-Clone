@@ -1,8 +1,5 @@
 const createBtn = document.querySelector('button.createBtn');
-
-
-createBtn.addEventListener('click', createTodo);
-
+let indexValue = 0;
 function createTodo(){
     let div = document.querySelector("#placement-div");
     let todo = document.querySelector('textarea');
@@ -19,6 +16,7 @@ function createTodo(){
         newDiv.innerHTML = `
         <p class="p-3">${todo.value}</p>
         `;
+        moveBtn.setAttribute("onclick", "moveProgress()")
         moveBtn.parentNode = newDiv;
         newDiv.parentNode = div;
     
@@ -27,44 +25,45 @@ function createTodo(){
         todo.value = "";
     }
     
-    const moveBtns = document.querySelectorAll('.moveBtn');
-
-    //TODO edit make sure the click eventhandler first click does not double click.
-    //it does a double click
-    moveBtns.forEach((btn) => {
-        btn.addEventListener('click', () => {
-            
-            moveProgress(btn);
-        });
-    })
     
 }
 
 function moveProgress(btn){
-    console.log(btn.previousElementSibling);
-    //gets the button that was created in the create todo method
-    //is the parent div of btn
-    let todo = btn.parentNode;
-    //is the parent column of the todo
-    let parent = todo.parentNode;
-    if(todo.id === "last" ){
-        let closeBtn = document.createElement('button');
-        closeBtn.innerText = 'Close';
-        todo = closeBtn.parentNode;
-        todo.appendChild(closeBtn);
-    }
+    console.log(btn);
 
-    const todoDiv = document.querySelectorAll('.todo-div');
-    
-    let found;
-    
-
-    todoDiv.forEach((div, index) => {
-        if(parent === div){
-            found = index + 1;
-        } 
+    // //TODO edit make sure the click eventhandler first click does not double click.
+    // //it does a double click
+    // moveBtns.forEach((btn) => {
+    //     btn.addEventListener('click', () => {
+            
+    //         console.log(btn.previousElementSibling);
+    //         //gets the button that was created in the create todo method
+    //         //is the parent div of btn
+    //         let todo = btn.parentNode;
+    //         //is the parent column of the todo
+    //         let parent = todo.parentNode;
+    //         if(todo.id === "last" ){
+    //             let closeBtn = document.createElement('button');
+    //             closeBtn.innerText = 'Close';
+    //             todo = closeBtn.parentNode;
+    //             todo.appendChild(closeBtn);
+    //         }
         
-    })
-    todoDiv[found].appendChild(todo);
-    
+    //         const todoDiv = document.querySelectorAll('.todo-div');
+            
+    //         let found;
+            
+        
+    //         todoDiv.forEach((div, index) => {
+    //             if(parent === div){
+    //                 found = index + 1;
+    //             } 
+                
+    //         })
+    //         todoDiv[found].appendChild(todo);
+            
+    //     });
+    // })
+   
 }
+
