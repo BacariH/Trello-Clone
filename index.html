@@ -7,6 +7,18 @@
     <title>Trello Clone</title>
 </head>
 <body>
+    <section class="modal z-10 bg-gray-200 bg-opacity-70 p-4 h-screen w-screen absolute ">
+        <div class="bg-white p-8 w-3/4 m-auto h-3/4 info">
+            <label for="firstName">First Name:
+                <input type="text" placeholder="firstname" id="firstName">
+            </label>
+            <label for="lastName">Last Name:
+                <input type="text" placeholder="firstname" id="lastName">
+            </label>
+            <input type="submit" value="Submit">
+            <p class="text-blue-300 cursor-pointer para" onclick="removeModal()">Skip</p>
+        </div>
+    </section>
     <section class="site-wrapper bg-green-200 h-screen">
         <header class="p-4 bg-white">
             <nav class="p-2 text-center">

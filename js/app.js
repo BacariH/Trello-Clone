@@ -1,5 +1,5 @@
 const createBtn = document.querySelector("button.createBtn");
-let indexValue = 0;
+
 function createTodo() {
   let div = document.querySelector("#placement-div");
   let todo = document.querySelector("textarea");
@@ -24,20 +24,13 @@ function createTodo() {
   }
 }
 
-// This is all your original logic
+
 function moveCard(btn) {
-  console.log(btn.previousElementSibling);
   //gets the button that was created in the create todo method
   //is the parent div of btn
   let todo = btn.parentNode;
   //is the parent column of the todo
   let parent = todo.parentNode;
-  if (todo.id === "last") {
-    let closeBtn = document.createElement("button");
-    closeBtn.innerText = "Close";
-    todo = closeBtn.parentNode;
-    todo.appendChild(closeBtn);
-  }
 
   const todoDiv = document.querySelectorAll(".todo-div");
 
@@ -46,6 +39,7 @@ function moveCard(btn) {
   todoDiv.forEach((div, index) => {
     if (parent === div) {
       found = index + 1;
+      
     }
   });
   todoDiv[found].appendChild(todo);
@@ -60,3 +54,9 @@ main.addEventListener("click", (e) => {
   }
   moveCard(e.target);
 });
+
+function removeModal(){
+  let modal = document.querySelector('.info').parentNode;
+  let modalParent = modal.parentNode;
+  modalParent.removeChild(modal);
+}
