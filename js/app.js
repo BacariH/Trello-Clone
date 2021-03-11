@@ -60,3 +60,19 @@ function removeModal(){
   let modalParent = modal.parentNode;
   modalParent.removeChild(modal);
 }
+
+function setUserName(){
+  const userFirstName = document.querySelector("#firstName").value;
+  const userLastName = document.querySelector("#lastName").value;
+  const userDisplayName = document.querySelector("#userName");
+
+  if(userFirstName === "" || userFirstName === null || userLastName === "" || userLastName === null){
+    alert('Please set your first name and last name.');
+    localStorage.removeItem("name");
+    console.log(localStorage);
+  } else {
+    userDisplayName.textContent = userFirstName + " " + userLastName;
+    removeModal();
+  }
+  localStorage.setItem("name", userDisplayName.textContent);
+}

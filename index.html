@@ -7,25 +7,34 @@
     <title>Trello Clone</title>
 </head>
 <body>
-    <section class="modal z-10 bg-gray-200 bg-opacity-70 p-4 h-screen w-screen absolute ">
+    <section class="modal z-10 bg-gray-200 bg-opacity-70 p-2 h-screen w-screen absolute ">
         <div class="bg-white p-8 w-3/4 m-auto h-3/4 info">
-            <label for="firstName">First Name:
-                <input type="text" placeholder="firstname" id="firstName">
-            </label>
-            <label for="lastName">Last Name:
-                <input type="text" placeholder="firstname" id="lastName">
-            </label>
-            <input type="submit" value="Submit">
-            <p class="text-blue-300 cursor-pointer para" onclick="removeModal()">Skip</p>
+            <div class="">
+                <label for="firstName">First Name:
+                    <input type="text" placeholder="firstname" id="firstName">
+                </label>
+                <label for="lastName">Last Name:
+                    <input type="text" placeholder="lastname" id="lastName">
+                </label>
+                <input type="button" value="Submit" onclick="setUserName()">
+                <p class="text-blue-300 cursor-pointer underline para" onclick="removeModal()">Skip</p>
+            </div>
+            <div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae accusamus natus, esse voluptatem inventore non laborum. Voluptas, odio itaque recusandae perspiciatis nihil doloribus tempore natus autem accusamus aperiam, repellat a, ratione officiis quae. Tenetur adipisci sequi velit veniam modi cupiditate fuga totam minus asperiores! Harum repellendus iusto ab quam aut vel magni aspernatur qui error laborum, quis culpa perferendis adipisci, veniam ipsa optio totam maiores, expedita obcaecati id voluptate! Omnis consectetur suscipit nulla in. Quam ipsam velit, nisi distinctio perspiciatis blanditiis aliquid in voluptas, officiis, incidunt ullam. Assumenda quaerat culpa, tempore nisi velit vitae labore sit fugit est non quisquam esse dignissimos? Incidunt aliquam inventore perspiciatis. Quisquam libero dolores commodi. Rem fuga laudantium, soluta consectetur sit quibusdam dignissimos ut dolor incidunt. Voluptatibus earum ducimus aliquam error, sed ullam sunt iure iusto. Pariatur at nemo consequuntur ut! Atque ab eius, aut error, id provident quam ipsam vitae iusto facere exercitationem. Quam ab perspiciatis ex doloremque eligendi dolore amet maiores! Modi laborum explicabo saepe porro minima ipsam illo dolor maxime, mollitia, commodi consectetur, quaerat ullam ea dolorum! Corporis quis repellendus est, non minus magnam mollitia, doloribus, porro minima sequi cumque omnis inventore sapiente nobis ullam dolorum sunt quasi eum ducimus eaque corrupti aut laboriosam facilis? Magnam impedit voluptas consectetur explicabo suscipit non culpa fugiat, doloremque mollitia, temporibus vel ab voluptatibus nulla sunt in dolorem? Laboriosam veritatis, temporibus excepturi provident eius, minus, illo saepe consequuntur ab repudiandae dolorem deleniti cum odio assumenda voluptatem alias doloribus voluptas rerum repellendus? Architecto quis culpa aliquam maxime officiis nostrum ratione, facilis non velit. Officiis, nihil magni unde dolore tempore nesciunt. Est necessitatibus dolores iure asperiores harum quia, labore quisquam dicta tempore explicabo aliquam dolorem minima vel repudiandae nesciunt quo odit! Aliquid quibusdam molestias necessitatibus est consequatur optio amet natus modi saepe nam, aperiam dolor ipsa explicabo debitis.</p>
+            </div>
         </div>
     </section>
-    <section class="site-wrapper bg-green-200 h-screen">
-        <header class="p-4 bg-white">
+    <section class="site-wrapper bg-green-200 h-full">
+        <header class="p-2 bg-white">
             <nav class="p-2 text-center">
                 <h1 class="text-xl">Trello Clone</h1>
+                <span id="userName"></span>
+                <figure>
+                    <img src="" alt="">
+                </figure>
             </nav>
         </header>
-        <main class="grid grid-flow-col auto-cols-fr gap-10 p-8">
+        <main class="grid grid-flow-col auto-cols-fr gap-10 p-6">
             <section class="p-4 grid grid-rows-fr rounded-lg shadow-lg">
                 <h1 class="text-2xl underline mb-5 tracking-wider font-montserrat">Backlog</h1>
                 <div id="placement-div" class="p-3 grid grid-flow-cols-3 gap-4 rounded-lg overflow-y-auto overflow-wrap h-80 mb-10 shadow-lg todo-div">
